@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16,31 +16,31 @@
 </head>
 
 <body>
-
+    
     <!-- Candidate Detail -->
-    <form id="form">
+   <form id="form" method="post" action="bonafide.php">
         <h1>Certificate</h1>
         <div class="course">
             <span>Course:</span>
             <select name="course" id="course" class="course" required>
                 <option value=""></option>
-                <option value="Web Development">Web Development intern</option>
-                <option value="Android Development">Android Development</option>
-                <option value="Competitive Programming">Azure Certification</option>
+                <option value="BE Computer Science">BE Computer Science</option>
+                <option value="BE Electronics">BE Electronics</option>
+                <option value="Bio Technology">Bio Technology</option> 
             </select>
         </div>
         
         <div class="name">
             <span>Name: </span>
-            <input type="text" placeholder="name" required id="name">
+            <input type="text" placeholder="name" name="name" required id="name">
         </div>
 
         <div class="date">
-            Start: <input type="date" name="" id="start-date" required>
-            End: <input type="date" name="" id="end-date" required>
+            Start: <input type="date" name="start_date" id="start-date" required>
+            End: <input type="date" name="end_date" id="end-date" required>
         </div>
         <div>
-            <button>Submit</button>
+            <button type="submit">Submit</button>
             <button type="reset">Reset</button>
         </div>
     </form>
@@ -52,23 +52,23 @@
         <div class="container">
 
             <div class="certificate-header">
-                <h1>Infocom<span></h1>
-                <h4 id="date_conatiner">Internship Conducted Between (<span id="startDate"></span> To <span
-                        id="endDate"></span>)</h4>
+                <h1>Sri Shakthi institute of engineering and Technology<span></h1>
+                <!-- <h4 id="date_conatiner">Internship Conducted Between (<span id="startDate"></span> To <span
+                        id="endDate"></span>)</h4> -->
             </div>
 
             <div class="certificate-main" id="form">
-                <p>This certificate is awarded to</p>
+                <p>This certificate is certify to</p>
                 <h4 class="candidate-name" id="candidate_name"></h4>
-                <p>in appreciation of your successful completion of intership of the position of<b><span
-                            class="candidate_course" id="subject"></span></b>at Infocom.</p>
+                <p>is a Bonafide for studying</i><b><span
+                            class="candidate_course" id="subject"></span></b>at Sri Shakthi institute of engineering and Technology.</p>
 
-                <p class="sign">Prakhar Tiwari</p>
+                <p class="sign">RaviKumar</p>
                 <div class="hr"></div>
-                <h6>Director Name</h6>
-                <h5>Executive Director, Infocom</h5>
+                <h6>Principal</h6>
+                <h5>Principal of SIET</h5>
 
-                <img class="full_logo" src="https://th.bing.com/th/id/OIP.c8HyLql3FhUL8GeocZp-iwAAAA?pid=ImgDet&rs=1" alt="Infocom">
+                <img class="full_logo" src="https://tse2.mm.bing.net/th?id=OIP.2Nsc5uD7mzKVC5yF4AQeogAAAA&pid=Api&P=0&h=180" alt="Infocom">
             </div>
         </div>
 
@@ -76,10 +76,11 @@
     </main>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.js"></script>
-    <script src="certificate.js"></script>
+    <script src="certificate.js"></script> -->
+    
 </body>
 
 </html>
