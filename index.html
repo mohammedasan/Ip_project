@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,17 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certification</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300;500&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    
-    <!-- Candidate Detail -->
+    <!-- Candidate Detail Form -->
    <form id="form" method="post" action="bonafide.php">
         <h1>Certificate</h1>
         <div class="course">
@@ -47,21 +44,16 @@
 
 
     <!-- Certificate -->
-
-    <main id="main">
+    <main id="main" style="display:none;">
         <div class="container">
-
             <div class="certificate-header">
-                <h1>Sri Shakthi institute of engineering and Technology<span></h1>
-                <!-- <h4 id="date_conatiner">Internship Conducted Between (<span id="startDate"></span> To <span
-                        id="endDate"></span>)</h4> -->
+                <h1>Sri Shakthi Institute of Engineering and Technology</h1>
             </div>
 
-            <div class="certificate-main" id="form">
-                <p>This certificate is certify to</p>
+            <div class="certificate-main">
+                <p>This certificate is issued to</p>
                 <h4 class="candidate-name" id="candidate_name"></h4>
-                <p>is a Bonafide for studying</i><b><span
-                            class="candidate_course" id="subject"></span></b>at Sri Shakthi institute of engineering and Technology.</p>
+                <p>for successfully studying</i> <b><span id="subject"></span></b> at Sri Shakthi Institute of Engineering and Technology.</p>
 
                 <p class="sign">RaviKumar</p>
                 <div class="hr"></div>
@@ -72,15 +64,42 @@
             </div>
         </div>
 
-        <button id="btn" class="button">Download Button</button>
+        <button id="btn" class="button">Download Certificate</button>
     </main>
 
-
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.js"></script>
-    <script src="certificate.js"></script> -->
-    
-</body>
 
+    <script>
+        var na = '';
+        var form = document.getElementById("form");
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Get form data
+            var name = document.getElementById("name").value;
+            var course = document.getElementById("course").value;
+            var start_date = document.getElementById('start-date').value;
+            var end_date = document.getElementById('end-date').value;
+
+            // Fill certificate details
+            document.getElementById('candidate_name').innerText = name;
+            document.getElementById('subject').innerText = course;
+
+            na = name.split(' ').join('');
+
+            // Show the certificate
+            document.getElementById('main').style.display = 'block';
+
+            // Generate and download the certificate as an image
+            domtoimage.toBlob(document.getElementById('main')).then(function (blob) {
+                window.saveAs(blob, na + "-certificate.png");
+
+                // Redirect to download.php after downloading the image
+                window.location.href = 'download.php';
+            });
+        });
+    </script>
+</body>
 </html>
